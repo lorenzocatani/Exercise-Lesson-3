@@ -51,6 +51,7 @@ def test_ChangeParticle_wrong_direction():
   except: pass
   else: raise AssertionError("wrong direction did not raise an error")
 
+  
 def test_ChangeParticle_move_right_the_last():
   """ Test for moving the last particle on the right """
   i = 2
