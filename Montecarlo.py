@@ -11,6 +11,7 @@ def energy(f,density):
 	   E = f(element) + E   
   return E
 
+  
 def ChangeParticle(density,i,direction):
   density = array(density)
   if density[i]<0:
