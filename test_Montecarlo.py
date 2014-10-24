@@ -21,6 +21,7 @@ def test_energy_not_positive():
   except: pass
   else: raise AssertionError("negative number did not raise an error")
   
+  
 def test_energy_right():
   """ The right one """
   # Test something
@@ -100,6 +101,7 @@ def test_CompareEnergies_E1_less_than_E0():
  actual=CompareEnergies(E0,E1,T,p1) 
  assert_equal(expected,actual)
  
+ 
 def test_CompareEnergies_E1_equal_E0():
  """ Test in case E1=E0"""
  E0=10
@@ -109,6 +111,7 @@ def test_CompareEnergies_E1_equal_E0():
  expected=1
  actual=CompareEnergies(E0,E1,T,p1) 
  assert_equal(expected,actual)
+ 
  
 def test_CompareEnergies_p0_greater_p1():
  """ Test in case p0>p1 """
