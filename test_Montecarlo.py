@@ -61,3 +61,21 @@ def test_ChangeParticle_move_right_the_last():
   actual=ChangeParticle(v,i,direction)
   #actual=[6,2,0]
   assert_equal(all(expected),all(actual))
+
+def test_ChangeParticle_move_left_the_first():
+  """ Test for moving the first particle on the left """
+  i = 0
+  v=[5,2,1]
+  direction=0 # 0 is left and 1 is right.
+  expected=[4,2,2]
+  actual=ChangeParticle(v,i,direction)
+  assert_equal(all(expected),all(actual))
+ 
+def test_ChangeParticle_right():
+  """ Test for moving non boundaries particles on the right """
+  i = 0
+  v=[5,2,1]
+  direction=1 # 0 is left and 1 is right.
+  expected=[4,3,1]
+  actual=ChangeParticle(v,i,direction)
+  assert_equal(all(expected),all(actual))
