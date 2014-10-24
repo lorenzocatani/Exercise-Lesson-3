@@ -27,3 +27,12 @@ def ChangeParticle(density,i,direction):
   elif direction==0 : density[i-1]= density[i-1]+1 # Particle moved on the left
   else : density[i+1]=density[i+1]+1 # Particle moved on the right
   return density
+  
+  
+def CompareEnergies(E0,E1,T,p1):
+  if T<=0:
+    raise ValueError("T is a positive quantity!")
+  p0=exp((E0-E1)/T)
+  if E0>E1: return 1 # 1 means to accept
+  elif p0>p1 : return 1
+  else: return 0
