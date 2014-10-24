@@ -30,3 +30,16 @@ def test_energy_right():
   expected=6
   actual=energy(f,v)
   assert_equal(expected,actual)
+  
+def test_ChangeParticle_not_positive():
+  """ Test for the positivity""" 
+  try:  ChangeParticle([-5,2,1],0,0)# 0 is left and 1 is right.
+  except: pass
+  else: raise AssertionError("negative number did not raise an error")
+
+  
+def test_ChangeParticle_wrong_dimension():
+  """ Test for the right dimension reference """
+  try:  ChangeParticle([5,2,1],4,0)# 0 is left and 1 is right.
+  except: pass
+  else: raise AssertionError("wrong dimension reference did not raise an error")
