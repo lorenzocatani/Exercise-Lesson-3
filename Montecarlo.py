@@ -1,5 +1,5 @@
 from numpy import array, any, sum, exp, log
-
+  
 def energy(f,density):
   density = array(density)
   if density.dtype.kind != 'i' and len(density) > 0:
@@ -10,7 +10,6 @@ def energy(f,density):
   for element in density:
 	   E = f(element) + E   
   return E
-
   
 def ChangeParticle(density,i,direction):
   density = array(density)
@@ -27,8 +26,7 @@ def ChangeParticle(density,i,direction):
   elif direction==0 : density[i-1]= density[i-1]+1 # Particle moved on the left
   else : density[i+1]=density[i+1]+1 # Particle moved on the right
   return density
-  
-  
+
 def CompareEnergies(E0,E1,T,p1):
   if T<=0:
     raise ValueError("T is a positive quantity!")
