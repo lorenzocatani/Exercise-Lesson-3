@@ -89,3 +89,54 @@ def test_CompareEnergies_T_negative():
  try:  CompareEnergies(E0,E1,T,p1)
  except: pass
  else: raise AssertionError("negative T did not raise an error")
+ 
+def test_CompareEnergies_E1_less_than_E0():
+ """ Test in case E0>E1 """
+ E0=12
+ E1=10
+ T=273
+ p1=0.4
+ expected=1
+ actual=CompareEnergies(E0,E1,T,p1) 
+ assert_equal(expected,actual)
+ 
+def test_CompareEnergies_E1_equal_E0():
+ """ Test in case E1=E0"""
+ E0=10
+ E1=10
+ T=273
+ p1=0.4
+ expected=1
+ actual=CompareEnergies(E0,E1,T,p1) 
+ assert_equal(expected,actual)
+ 
+def test_CompareEnergies_p0_greater_p1():
+ """ Test in case p0>p1 """
+ E0=10
+ E1=12
+ T=273
+ p1=0.1
+ expected=1
+ actual=CompareEnergies(E0,E1,T,p1) 
+ assert_equal(expected,actual)
+ 
+ 
+def test_CompareEnergies_p1_equal_p0():
+ """ Test in case p1=p0 """
+ E0=10
+ E1=11
+ T=1/log(2)
+ p1=0.5
+ expected=0
+ actual=CompareEnergies(E0,E1,T,p1) 
+ assert_equal(expected,actual)
+ 
+def test_CompareEnergies_p1_greater_p0():
+ """ Test in case p1=p0"""
+ E0=10
+ E1=12
+ T=1
+ p1=0.4
+ expected=0
+ actual=CompareEnergies(E0,E1,T,p1) 
+ assert_equal(expected,actual)
