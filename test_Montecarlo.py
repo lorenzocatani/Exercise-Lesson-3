@@ -79,3 +79,13 @@ def test_ChangeParticle_right():
   expected=[4,3,1]
   actual=ChangeParticle(v,i,direction)
   assert_equal(all(expected),all(actual))
+
+def test_CompareEnergies_T_negative():
+ """ Test for positive temperature """
+ E0=12
+ E1=10
+ T=-273
+ p1=0.4
+ try:  CompareEnergies(E0,E1,T,p1)
+ except: pass
+ else: raise AssertionError("negative T did not raise an error")
