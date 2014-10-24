@@ -43,3 +43,20 @@ def test_ChangeParticle_wrong_dimension():
   try:  ChangeParticle([5,2,1],4,0)# 0 is left and 1 is right.
   except: pass
   else: raise AssertionError("wrong dimension reference did not raise an error")
+ 
+ 
+def test_ChangeParticle_wrong_direction():
+  """ Test for the right direction """
+  try:  ChangeParticle([5,2,1],2,3)# 0 is left and 1 is right.
+  except: pass
+  else: raise AssertionError("wrong direction did not raise an error")
+
+def test_ChangeParticle_move_right_the_last():
+  """ Test for moving the last particle on the right """
+  i = 2
+  v=[5,2,1]
+  direction=1 # 0 is left and 1 is right.
+  expected=[6,2,0]
+  actual=ChangeParticle(v,i,direction)
+  #actual=[6,2,0]
+  assert_equal(all(expected),all(actual))
