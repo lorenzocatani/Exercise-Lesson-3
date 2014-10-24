@@ -21,7 +21,6 @@ def test_energy_not_positive():
   except: pass
   else: raise AssertionError("negative number did not raise an error")
   
-  
 def test_energy_right():
   """ The right one """
   # Test something
@@ -44,15 +43,13 @@ def test_ChangeParticle_wrong_dimension():
   try:  ChangeParticle([5,2,1],4,0)# 0 is left and 1 is right.
   except: pass
   else: raise AssertionError("wrong dimension reference did not raise an error")
- 
- 
+  
 def test_ChangeParticle_wrong_direction():
   """ Test for the right direction """
   try:  ChangeParticle([5,2,1],2,3)# 0 is left and 1 is right.
   except: pass
   else: raise AssertionError("wrong direction did not raise an error")
 
-  
 def test_ChangeParticle_move_right_the_last():
   """ Test for moving the last particle on the right """
   i = 2
@@ -81,6 +78,7 @@ def test_ChangeParticle_right():
   actual=ChangeParticle(v,i,direction)
   assert_equal(all(expected),all(actual))
 
+ 
 def test_CompareEnergies_T_negative():
  """ Test for positive temperature """
  E0=12
@@ -90,6 +88,7 @@ def test_CompareEnergies_T_negative():
  try:  CompareEnergies(E0,E1,T,p1)
  except: pass
  else: raise AssertionError("negative T did not raise an error")
+
  
 def test_CompareEnergies_E1_less_than_E0():
  """ Test in case E0>E1 """
@@ -101,7 +100,6 @@ def test_CompareEnergies_E1_less_than_E0():
  actual=CompareEnergies(E0,E1,T,p1) 
  assert_equal(expected,actual)
  
- 
 def test_CompareEnergies_E1_equal_E0():
  """ Test in case E1=E0"""
  E0=10
@@ -111,7 +109,6 @@ def test_CompareEnergies_E1_equal_E0():
  expected=1
  actual=CompareEnergies(E0,E1,T,p1) 
  assert_equal(expected,actual)
- 
  
 def test_CompareEnergies_p0_greater_p1():
  """ Test in case p0>p1 """
