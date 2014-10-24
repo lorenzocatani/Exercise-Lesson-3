@@ -1,4 +1,4 @@
-from MonteCarlo import energy,ChangeParticle,CompareEnergies
+from Montecarlo import energy,ChangeParticle,CompareEnergies
 from nose.tools import assert_equal
 from mock import Mock
 from numpy import array, any, sum, exp, log
@@ -31,11 +31,6 @@ def test_energy_right():
   actual=energy(f,v)
   assert_equal(expected,actual)
   
-def test_ChangeParticle_not_positive():
-  """ Test for the positivity""" 
-  try:  ChangeParticle([-5,2,1],0,0)# 0 is left and 1 is right.
-  except: pass
-  else: raise AssertionError("negative number did not raise an error")
 
   
 def test_ChangeParticle_wrong_dimension():

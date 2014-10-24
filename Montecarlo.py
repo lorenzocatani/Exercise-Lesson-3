@@ -8,17 +8,17 @@ def energy(f,density):
     raise ValueError ("Expected array of *positive* integers.")
   E=0
   for element in density:
-	   E = f(element) + E   
+	    E = f(element) + E   
   return E
   
 def ChangeParticle(density,i,direction):
   density = array(density)
-  if density[i]<0:
-    raise ValueError("No more particles in this box!") # In case you use it more times and you have boxes with zero particles.
   if i<0 or i>(len(density)-1):
     raise ValueError("i has to refer to one element of the density array")
   if direction!=0 and direction!=1:
     raise ValueError("Direction has to be either 0=left or 1=right")
+  if density[i]==0:
+    return density
   density[i] = density[i]-1 # Move a particle from the i-th position.
   d=len(density) 
   if i==d-1 and direction==1: density[0]=density[0]+1
